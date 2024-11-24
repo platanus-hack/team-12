@@ -1,0 +1,27 @@
+{
+  // ------------ General ------------
+  "editor.formatOnSave": true,
+  // ------------ Extensiones ------------
+  "conventionalCommits.scopes": [
+    "back",
+    "front",
+    "api",
+    "db",
+    "config",
+    "admin"
+  ],
+  "conventionalCommits.gitmoji": false,
+  "conventionalCommits.promptBody": false,
+  "conventionalCommits.promptFooter": false,
+  "conventionalCommits.autoCommit": false,
+  "conventionalCommits.promptScopes": true
+  // ------------ Python ------------
+  // "[python]": {
+  //   "editor.insertSpaces": true,
+  //   "editor.defaultFormatter": "charliermarsh.ruff",
+  //   "editor.codeActionsOnSave": {
+  //     "source.fixAll.ruff": "explicit",
+  //     "source.organizeImports.ruff": "explicit"
+  //   }
+  // }
+}

@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "vivaxy.vscode-conventional-commits",
+    "charliermarsh.ruff",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

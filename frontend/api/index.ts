@@ -1,12 +1,10 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "";
-
 export async function fetchAPI(
   endpoint: string,
   method: "GET" | "POST" | "PATCH" | "PUT" | "DELETE",
   headers: HeadersInit = { Accept: "application/json" },
   body: Record<string, any> | null = null
 ) {
-  const url = `${API_BASE_URL}${endpoint}`;
+  const url = `https://littledragons.games${endpoint}`;
   try {
     const response = await fetch(url, {
       method,
@@ -24,6 +22,7 @@ export async function fetchAPI(
     }
 
     return await response.json();
+
   } catch (error) {
     console.error(`Error in fetchAPI (${method} ${endpoint}):`, error);
     throw error;
