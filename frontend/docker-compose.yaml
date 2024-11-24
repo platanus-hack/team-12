@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  frostaway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: frostaway
+    ports:
+      - "3312:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_ESLINT_DISABLED: "true"
+    command: ["npm", "start"]
+    restart: unless-stopped
+    profiles:
+      - production
+
+  frostaway-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: frostaway-dev
+    ports:
+      - "3001:3000"
+    environment:
+      NODE_ENV: development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: ["npm", "run", "dev"]
+    restart: unless-stopped
+    profiles:
+      - development
+
+volumes:
+  node_modules:
